@@ -101,9 +101,16 @@ function menuPrincipal() {
             case 0: {
                 process.exit(0)
             }
+
+            default: {
+                console.log("ERRO!!!")
+                break;
+            }
         }
     }
 }
+
+//Funcões Principais
 
 function verificarPositivoNegativo() {
     console.log("")
@@ -156,9 +163,10 @@ function calcularMedia() {
     } else {
         situacao = "EXAME"
     }
-    console.log(`
-Média: ${media.toFixed(2)}
+    console.log("\n<>-------------------------------<>")
+    console.log(`Média: ${media.toFixed(2)}
 Situação: ${situacao}`)
+    console.log("<>-------------------------------<>")
     console.log(`
 Deseja calcular mais alguma média: 
 1 - SIM
@@ -183,11 +191,13 @@ Deseja calcular mais alguma média:
 function listarMultiplosTres() {
     let numero = 3
     console.log("")
+    console.log("\n<>-------------------------------<>")
     for (let i = 1; i <= 30; i++) {
         if (i % 3 === 0) {
             console.log(i)
         }
     }
+    console.log("<>-------------------------------<>")
 }
 
 function calcularFatorial() {
@@ -203,13 +213,15 @@ function calcularFatorial() {
             fatorial *= i
         }
     }
-    console.log(`\nO fatorial de ${numero} é ${fatorial}`)
+    console.log("\n<>-------------------------------<>")
+    console.log(`O fatorial de ${numero} é ${fatorial}`)
+    console.log("<>-------------------------------<>")
     console.log(`
 Deseja calcular o fatorial de outro número: 
 1 - SIM
 2 - NÃO`)
     let confirma = Number(prompt("Insira: "))
-    switch(confirma) {
+    switch (confirma) {
         case 1: {
             calcularFatorial();
             break;
@@ -234,13 +246,15 @@ function verificarAnoBissexto() {
     } else {
         anoString = "não é bissexto"
     }
-    console.log(`\nO ano ${ano} ${anoString}`)
+    console.log("\n<>-------------------------------<>")
+    console.log(`O ano ${ano} ${anoString}`)
+    console.log("<>-------------------------------<>")
     console.log(`
 Deseja verificar outro ano: 
 1 - SIM
 2 - NÃO`)
     let confirma = Number(prompt("Insira: "))
-    switch(confirma) {
+    switch (confirma) {
         case 1: {
             verificarAnoBissexto();
             break;
@@ -260,14 +274,15 @@ function converterTemperatura() {
     console.log("")
     let celsius = Number(prompt("Insira a temperatura em Celsius:"))
     let fahrenheit = (celsius * 1.8) + 32
-    console.log(`
-Celsius: ${celsius} -> Fahrenheit: ${fahrenheit.toFixed(2)}`)
+    console.log("\n<>-------------------------------<>")
+    console.log(`Celsius: ${celsius} -> Fahrenheit: ${fahrenheit.toFixed(2)}`)
+    console.log("<>-------------------------------<>")
     console.log(`
 Deseja converter outra temperatura: 
 1 - SIM
 2 - NÃO`)
     let confirma = Number(prompt("Insira: "))
-    switch(confirma) {
+    switch (confirma) {
         case 1: {
             converterTemperatura();
             break;
@@ -284,5 +299,131 @@ Deseja converter outra temperatura:
 }
 
 function verificarPalindromo() {
-    
+    console.log("")
+    let palindromo
+    let palavra = prompt("Insira uma palavra para verificar: ")
+    let inversa = palavra.split("").reverse().join("")
+    if (palavra.toLocaleLowerCase() == inversa.toLocaleLowerCase()) {
+        palindromo = "é um palíndromo"
+    } else {
+        palindromo = "não é um palíndromo"
+    }
+    console.log("\n<>-------------------------------<>")
+    console.log(`A palavra ${palavra} ${palindromo}`)
+    console.log("<>-------------------------------<>")
+    console.log(`
+Deseja verificar outra palavra: 
+1 - SIM
+2 - NÃO`)
+    let confirma = Number(prompt("Insira: "))
+    switch (confirma) {
+        case 1: {
+            verificarPalindromo();
+            break;
+        }
+        case 2: {
+            console.log("Retornando ao menu...")
+            return;
+        }
+        default: {
+            console.log("ERRO!!!")
+            break;
+        }
+    }
+}
+
+function somarUmACem() {
+    console.log("")
+    let soma = 0
+    for (let i = 1; i <= 100; i++) {
+        soma += i
+    }
+    console.log("\n<>-------------------------------<>")
+    console.log(`A soma de 1 até 100 é ${soma}`)
+    console.log("<>-------------------------------<>")
+}
+
+function exibirTabuadaCinco() {
+    console.log("")
+    let tabuada
+    console.log("\n<>-------------------------------<>")
+    for (let i = 1; i <= 10; i++) {
+        tabuada = 5 * i
+        console.log(`${i}. ${tabuada}`)
+    }
+    console.log("<>-------------------------------<>")
+}
+
+function contagemRegressiva() {
+    console.log("")
+    console.log("<>-------------------------------<>")
+    for (let i = 10; i >= 1; i--) {
+        let inicio = Date.now()
+        while (Date.now() - inicio < 1000) {
+        }
+        console.log(`${i}`)
+    }
+    console.log("! ! ! WOW ! ! !")
+    console.log("<>-------------------------------<>")
+}
+
+function executarFizzBuzz() {
+    console.log("")
+    console.log("<>-------------------------------<>")
+    for (let i = 1; i <= 30; i++) {
+        if (i % 3 === 0 && i % 5 === 0) {
+            console.log("FizzBuzz")
+        } else if (i % 3 === 0) {
+            console.log("Fizz")
+        } else if (i % 5 === 0) {
+            console.log("Buzz")
+        } else {
+            console.log(`${i}`)
+        }
+    }
+    console.log("<>-------------------------------<>")
+}
+
+function formatarSequencia() {
+    console.log("")
+    let sequencia = ""
+    for (let i = 1; i <= 5; i++) {
+        if (i == 5) {
+            sequencia += `${i}`
+        } else {
+            sequencia += `${i}-`
+        }
+    }
+    console.log("<>-------------------------------<>")
+    console.log(`${sequencia}`)
+    console.log("<>-------------------------------<>")
+}
+
+function desenharTriangulo() {
+    console.log("")
+    let linha = [" ", " ", " ", " ", "*", " ", " ", " ", " "]
+    let indexLeft = 3
+    let indexRight = 5
+    console.log("<>-------------------------------<>")
+    for (let i = 0; i <= 4; i++) {
+        let triangulo = ""
+        for (let j = 0; j < 9; j++) {
+            triangulo += linha[j]
+        }
+        console.log(triangulo)
+        linha[indexLeft] = ("*")
+        linha[indexRight] = ("*")
+        indexLeft--
+        indexRight++
+    }
+    console.log("<>-------------------------------<>")
+}
+
+function inverterTexto() {
+    console.log("")
+    let palavra = "Fotografia"
+    console.log("<>-------------------------------<>")
+    console.log(`Original: ${palavra}`)
+    console.log(`Inversa: ${palavra.split("").reverse().join("")}`)
+    console.log("<>-------------------------------<>")
 }
